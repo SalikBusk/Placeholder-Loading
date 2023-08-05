@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 import {
   createBrowserRouter,
@@ -9,16 +9,17 @@ import {
 } from "react-router-dom";
 
 
-import Index from './Pages/Index';
+import Home from './Pages/Home';
+import Post from './Components/Post/Post';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index/>,
+    element: <Home/>,
   },
   {
-    path: "/about",
-    element: <div><Skeleton circle width={100} height={100}/></div>,
+    path: "/post/:userId",
+    element: <Post/>,
   }
 ]);
 
